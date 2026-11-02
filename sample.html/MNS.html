@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MINDSPRINT 2026 // The Doomsday Hackathon — ITM Skills University</title>
+  <meta name="description" content="Humanity. Tech. Planet. One Last Sprint. 24-Hour Code Sprint at ITM Skills University Kharghar." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Google Fonts for Cinematic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- 1. Navigation -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <div class="container nav-wrap">
+        <a href="#hero" class="brand-link" aria-label="MindSprint 2026 Home">
+          <div class="brand-badge">
+            <img src="/IMAGES/Gemini_Generated_Image_oap0adoap0adoap0.png" alt="MindSprint logo" />
+          </div>
+          <div class="brand-text">
+            <h1>MINDSPRINT 2026</h1>
+            <span>School of FutureTech</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about">The Mission</a></li>
+          <li><a href="#tracks">Protocols</a></li>
+          <li><a href="#schedule">Timeline</a></li>
+          <li><a href="#prizes">Rewards</a></li>
+          <li><a href="#judges">Jury</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#faq">Briefing</a></li>
+          <li><a href="#core-members">Meet the Team</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+          <a href="#" class="btn btn-primary btn-sm" data-form-cta aria-label="Join Mission">Join Mission</a>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle"
+                  aria-label="Toggle navigation menu"
+                  aria-expanded="false">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">The Mission</a>
+        <a href="#tracks">Protocols</a>
+        <a href="#schedule">Timeline</a>
+        <a href="#faq">Briefing</a>
+        <a href="#" class="btn btn-primary" data-form-cta>Join Mission</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 2. Hero Section -->
+    <section class="hero-section" id="hero" aria-label="Hero Section">
+      <div class="hero-clock-glow" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="ping-dot" aria-hidden="true"></span>
+          <span>ITM Skills University // School of FutureTech Hackathon Club</span>
+        </div>
+
+        <h1 class="hero-title">
+          MINDSPRINT 2026
+          <span class="hero-subtitle-green">THE DOOMSDAY HACKATHON</span>
+        </h1>
+
+        <p class="hero-tagline">
+          Same People. Higher Stakes. Ideas Beyond Survival.
+        </p>
+
+        <!-- Countdown Module -->
+        <div class="countdown-box">
+          <div class="countdown-header">
+            <div class="status-tag">
+              <span class="ping-dot"
+                    style="background:#39ff14; box-shadow:0 0 8px #39ff14;"
+                    aria-hidden="true"></span>
+              <span>COUNTDOWN TO IMPACT</span>
+            </div>
+            <div style="color:var(--text-muted);">IST (UTC+5:30)</div>
+          </div>
+
+          <div id="countdownStatusText"
+               style="display:none; font-family:var(--font-mono); font-size:1.2rem; color:var(--ember-orange); font-weight:700;"></div>
+
+          <div class="countdown-grid" id="countdownGrid">
+            <div class="countdown-slot">
+              <div class="countdown-num" id="countDays">00</div>
+              <span class="countdown-lbl">DAYS</span>
+            </div>
+            <div class="countdown-slot">
+              <div class="countdown-num" id="countHours">00</div>
+              <span class="countdown-lbl">HOURS</span>
+            </div>
+            <div class="countdown-slot">
+              <div class="countdown-num" id="countMinutes">00</div>
+              <span class="countdown-lbl">MINUTES</span>
+            </div>
+            <div class="countdown-slot">
+              <div class="countdown-num" id="countSeconds">00</div>
+              <span class="countdown-lbl">SECONDS</span>
+            </div>
+            <div class="countdown-freeze-note">
+              22 Nov 2026, 07:00 AM (CODING FREEZE)
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary btn-lg" data-form-cta aria-label="Join the Mission">Join the Mission</a>
+          <a href="#tracks" class="btn btn-secondary btn-lg" aria-label="Explore Tracks">Explore Tracks</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. About Section — "The Mission" -->
+    <section id="about" aria-label="About The Mission">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="dot" aria-hidden="true"></span>
+            <span>// THE MISSION BRIEF</span>
+          </div>
+          <h2 class="section-title">SURVIVE THE CLOCK</h2>
+          <p class="section-lead">
+            ITM Skills University presents MindSprint 2026: a high-stakes 24-hour sprint pushing technologists, developers, and strategists to build functional MVPs before the impact clock hits zero.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="flex justify-between items-center" style="margin-bottom:1rem;">
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green); letter-spacing:0.1em;">PROTOCOL 01</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.5rem; text-transform:uppercase; color:#fff; margin-bottom:0.5rem;">Real-World Pressure</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">
+              No theoretical presentations. Squads architect working software systems against a ticking 24-hour clock before the impact freeze.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="flex justify-between items-center" style="margin-bottom:1rem;">
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green); letter-spacing:0.1em;">PROTOCOL 02</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.5rem; text-transform:uppercase; color:#fff; margin-bottom:0.5rem;">Cross-Stream Synergy</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">
+              Tech builders (B.Tech &amp; MCA) unite with strategic commercial minds (BBA &amp; MBA) to craft resilient, investable ventures.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="flex justify-between items-center" style="margin-bottom:1rem;">
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green); letter-spacing:0.1em;">PROTOCOL 03</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.5rem; text-transform:uppercase; color:#fff; margin-bottom:0.5rem;">Midnight Code Freeze</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">
+              At 07:00 AM on Sunday, all commit pipelines lock. Demonstrations must be live, accessible, and ready for trial.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Tracks Section — "Survival Protocols" -->
+    <section id="tracks" aria-label="Survival Protocol Tracks">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="dot" aria-hidden="true"></span>
+            <span>// SURVIVAL PROTOCOLS</span>
+          </div>
+          <h2 class="section-title">OPERATIONAL TRACKS</h2>
+          <p class="section-lead">
+            Choose your discipline. Whether engineering production‑grade MVPs or pitching high‑conviction crisis strategies, your squad races against the impact clock.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Track 1: B.Tech -->
+          <div class="card">
+            <div class="track-header">
+              <span class="protocol-code">PROTOCOL #01</span>
+              <span class="track-badge badge-tech">TECH BUILD</span>
+            </div>
+            <h3 class="track-title">B.Tech // Tech Build</h3>
+            <p class="track-quote">"Architect Resilient Systems Under Extreme Pressure"</p>
+            <p class="track-desc">
+              Build robust, functional MVPs spanning autonomous AI agents, distributed infrastructure, offline disaster mesh networks, and hardened software architectures.
+            </p>
+            <div class="track-tags">
+              <span class="track-tag">Autonomous AI Systems</span>
+              <span class="track-tag">Disaster Resilience</span>
+              <span class="track-tag">Edge Computing</span>
+              <span class="track-tag">Real-Time Architecture</span>
+            </div>
+          </div>
+
+          <!-- Track 2: MCA -->
+          <div class="card">
+            <div class="track-header">
+              <span class="protocol-code">PROTOCOL #02</span>
+              <span class="track-badge badge-tech">TECH BUILD</span>
+            </div>
+            <h3 class="track-title">MCA // Tech Build</h3>
+            <p class="track-quote">"Full-Stack Velocity &amp; Algorithmic Scalability"</p>
+            <p class="track-desc">
+              Engineer production‑grade web applications, secure database systems, API orchestration platforms, and scalable algorithmic engines capable of withstanding peak loads.
+            </p>
+            <div class="track-tags">
+              <span class="track-tag">Cloud Native Systems</span>
+              <span class="track-tag">Secure API Microservices</span>
+              <span class="track-tag">Data Pipeline Automation</span>
+              <span class="track-tag">Modern Web MVPs</span>
+            </div>
+          </div>
+
+          <!-- Track 3: BBA -->
+          <div class="card card-orange">
+            <div class="track-header">
+              <span class="protocol-code">PROTOCOL #03</span>
+              <span class="track-badge badge-pitch">BUSINESS PITCH</span>
+            </div>
+            <h3 class="track-title">BBA // Business Pitch</h3>
+            <p class="track-quote" style="color:var(--ember-orange);">
+              "Operational Strategy &amp; Crisis Economics"
+            </p>
+            <p class="track-desc">
+              Craft viable commercial blueprints, cost‑efficiency frameworks, market penetration roadmaps, and sustainable business models tailored for turbulent economic climates.
+            </p>
+            <div class="track-tags">
+              <span class="track-tag">Go-To-Market Execution</span>
+              <span class="track-tag">Crisis Economics</span>
+              <span class="track-tag">Unit Economics</span>
+              <span class="track-tag">Pitch Deck Dynamics</span>
+            </div>
+          </div>
+
+          <!-- Track 4: MBA -->
+          <div class="card card-orange">
+            <div class="track-header">
+              <span class="protocol-code">PROTOCOL #04</span>
+              <span class="track-badge badge-pitch">BUSINESS PITCH</span>
+            </div>
+            <h3 class="track-title">MBA // Business Pitch</h3>
+            <p class="track-quote" style="color:var(--ember-orange);">
+              "Venture Viability &amp; Executive Leadership"
+            </p>
+            <p class="track-desc">
+              Formulate institutional‑grade venture proposals, scale strategies, investor decks, risk containment doctrines, and high‑impact enterprise problem‑solving frameworks.
+            </p>
+            <div class="track-tags">
+              <span class="track-tag">Strategic Venture Modeling</span>
+              <span class="track-tag">Enterprise Risk Mitigation</span>
+              <span class="track-tag">Investment Readiness</span>
+              <span class="track-tag">Disruptive Industry Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Schedule Section — "Countdown to Impact" (UPDATED TIMELINE) -->
+    <section id="schedule" aria-label="Schedule and Timeline">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="dot" aria-hidden="true"></span>
+            <span>// COUNTDOWN TO IMPACT</span>
+          </div>
+          <h2 class="section-title">24-HOUR SPRINT TIMELINE</h2>
+          <p class="section-lead">
+            From registration on Saturday noon to the result declaration on Sunday afternoon, every milestone is strictly timed. Guard every hour.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- 1 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">12:00 PM <span>Sat, 21 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE I // ARRIVAL</span>
+              <h3 class="step-title">Registration &amp; Check-in</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                Squads report in, verify their teams, and check in before the sprint begins.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Control Room</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">01:30 PM <span>Sat, 21 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE II // THE COUNTDOWN BEGINS</span>
+              <h3 class="step-title">Opening Ceremony</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                The official kickoff of MindSprint 2026 with all participating squads assembled.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Big Audi</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">02:00 PM <span>Sat, 21 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE III // THE BRIEFING</span>
+              <h3 class="step-title">Problem Statement Release</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                Problem statements are revealed to the squads.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Big Audi</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">02:30 PM <span>Sat, 21 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE IV // SPRINT COMMENCES</span>
+              <h3 class="step-title">Mentor Allocation &amp; Development Kickoff</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                Mentors are allocated to squads and the build officially begins.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Hacking Rooms</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">07:30 PM <span>Sat, 21 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE V // RECON AUDIT</span>
+              <h3 class="step-title">Round 1: Idea Check (Mentoring)</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                Mentors review each squad's idea and approach and sharpen the scope.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Hacking Rooms</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">01:00 AM <span>Sun, 22 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE VI // MIDNIGHT PROTOCOL</span>
+              <h3 class="step-title">Round 2: Progress Check</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                A mid-sprint checkpoint to review how far each build has come.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Hacking Rooms</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">05:00 AM <span>Sun, 22 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE VII // LAST LIGHT</span>
+              <h3 class="step-title">Round 3: Final Mentoring</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                The last mentor session before the freeze to polish the build and the pitch.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Hacking Rooms</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 8 — FREEZE -->
+          <div class="timeline-step">
+            <div class="step-marker freeze-marker"></div>
+            <div class="step-time" style="color:var(--ember-orange);">07:00 AM <span>Sun, 22 Nov 2026</span></div>
+            <div class="timeline-card critical">
+              <span class="phase-tag" style="color:var(--ember-orange);">PHASE VIII // THE IMPACT FREEZE</span>
+              <h3 class="step-title">Coding Freeze</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                All code repositories lock. No further codebase changes count toward evaluation.
+              </p>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">08:00 AM <span>Sun, 22 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE IX // FINAL TRANSMISSION</span>
+              <h3 class="step-title">Submission Deadline</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                Final project submissions close. Submit through the online form before the deadline.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Online Form</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">09:00 – 11:00 AM <span>Sun, 22 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE X // THE SCREENING</span>
+              <h3 class="step-title">Screening by 5 Panels (Programme-wise)</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                Five panels screen the submissions programme by programme to select the finalists.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Hacking Rooms</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">11:30 AM – 01:30 PM <span>Sun, 22 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE XI // THE VERDICT</span>
+              <h3 class="step-title">Grand Finale: Top 3 Teams per Programme</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                The top 3 teams from each programme (12 teams in total) face the final round.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Big Audi</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 12 -->
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-time">02:30 PM <span>Sun, 22 Nov 2026</span></div>
+            <div class="timeline-card">
+              <span class="phase-tag">PHASE XII // SURVIVORS DECLARED</span>
+              <h3 class="step-title">Result Declaration</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">
+                The winners of MindSprint 2026 are announced.
+                <br /><span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green);">VENUE: Big Audi</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Prizes Section — "The Rewards" -->
+    <section id="prizes" aria-label="Prizes and Rewards">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="dot" aria-hidden="true"></span>
+            <span>// THE REWARDS</span>
+          </div>
+          <h2 class="section-title">SURVIVAL BOUNTIES</h2>
+          <p class="section-lead">
+            Direct rewards, developer grants, and trophies awarded to squads that deliver working, battle‑tested solutions.
+          </p>
+        </div>
+
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="coming-soon-title">Bounty Cache Sealed</h3>
+          <p class="coming-soon-desc">
+            [PRIZES: TBA] Official reward allocations, cash bounties, and cloud tool grants will be unlocked shortly.
+          </p>
+          <span class="status-pill">Awaiting Protocol Declassification</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Judges & Mentors Section -->
+    <section id="judges" aria-label="Judges and Mentors">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="dot" aria-hidden="true"></span>
+            <span>// EVALUATION JURY</span>
+          </div>
+          <h2 class="section-title">JUDGES &amp; MENTORS</h2>
+          <p class="section-lead">
+            Experienced technology leaders, system architects, and venture founders auditing your codebase and business strategy.
+          </p>
+        </div>
+
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon" style="color:var(--acid-green);">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+          </div>
+          <h3 class="coming-soon-title">Jury Dossiers In Verification</h3>
+          <p class="coming-soon-desc">
+            [JUDGES &amp; MENTORS: TBA] Senior tech executives and startup mentors are being finalized. Official profiles will be declassified before launch.
+          </p>
+          <span class="status-pill" style="border-color:var(--acid-green-border); background:var(--acid-green-dim); color:var(--acid-green);">
+            Dossiers Pending Clearance
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Sponsors & Partners Section -->
+    <section id="sponsors" aria-label="Sponsors and Partners">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="dot" aria-hidden="true"></span>
+            <span>// LOGISTICAL BACKING</span>
+          </div>
+          <h2 class="section-title">SPONSORS &amp; PARTNERS</h2>
+          <p class="section-lead">
+            Empowering student squads with infrastructure, cloud credits, and resources for the doomsday build.
+          </p>
+        </div>
+
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="coming-soon-title">Partnership In Infiltration</h3>
+          <p class="coming-soon-desc">
+            [SPONSORS: TBA] Cloud platform sponsors, tooling providers, and community partners are currently being onboarded.
+          </p>
+          <span class="status-pill">Supply Lines Connecting</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQs Section — "Survival Briefing" -->
+    <section id="faq" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="dot" aria-hidden="true"></span>
+            <span>// SURVIVAL BRIEFING</span>
+          </div>
+          <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+          <p class="section-lead">
+            Critical logistics, team regulations, and protocol clarification before entering the campus sprint bunker.
+          </p>
+        </div>
+
+        <div class="faq-wrap">
+          <div class="faq-item active">
+            <button class="faq-btn" aria-expanded="true" aria-controls="faq1">
+              <span>Who is eligible to participate in MindSprint 2026?</span>
+              <div class="faq-indicator">+</div>
+            </button>
+            <div class="faq-content" id="faq1">
+              MindSprint is open to currently enrolled students across B.Tech, MCA, BBA, and MBA programs. Squads can be interdisciplinary or branch‑specific depending on your chosen track.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq2">
+              <span>What is the team size requirement?</span>
+              <div class="faq-indicator">+</div>
+            </button>
+            <div class="faq-content" id="faq2">
+              Teams must consist of 2 to 4 members. Solo hackers may be paired with incomplete squads during team verification, subject to availability.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq3">
+              <span>Is there any registration fee?</span>
+              <div class="faq-indicator">+</div>
+            </button>
+            <div class="faq-content" id="faq3">
+              No. Participation is 100% free for all shortlisted teams. Accommodation on campus during the 24‑hour sprint, Wi‑Fi access, and meals are provided by the organizers.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq4">
+              <span>What happens when the Coding Freeze occurs at 07:00 AM?</span>
+              <div class="faq-indicator">+</div>
+            </button>
+            <div class="faq-content" id="faq4">
+              At 07:00 AM on Sunday, 22 November, all code repositories must have their final commit logged. No further codebase changes will be counted toward evaluation during jury pitch rounds.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq5">
+              <span>What should participants bring to the campus bunker?</span>
+              <div class="faq-indicator">+</div>
+            </button>
+            <div class="faq-content" id="faq5">
+              Bring your laptop, charger, power strips, valid student ID card, personal toiletries, and any hardware/IoT devices needed for your project build.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq6">
+              <span>Can business students (BBA/MBA) partner with tech students (B.Tech/MCA)?</span>
+              <div class="faq-indicator">+</div>
+            </button>
+            <div class="faq-content" id="faq6">
+              Cross‑functional teams are warmly welcomed and strongly encouraged. Strategists paired with builders typically deliver the strongest end‑to‑end demonstrations.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Participation Banner -->
+    <section class="final-banner" aria-label="Participation Call to Action">
+      <div class="banner-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="banner-card">
+          <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--ember-orange); letter-spacing:0.15em; text-transform:uppercase; display:block; margin-bottom:0.75rem;">
+            // FINAL TRANSMISSION
+          </span>
+          <h2 style="font-family:var(--font-display); font-size:clamp(1.75rem, 4vw, 3rem); font-weight:900; text-transform:uppercase; color:#fff; margin-bottom:1rem; line-height:1.1;">
+            THE CLOCK IS TICKING. ANSWER THE CALL.
+          </h2>
+          <p style="color:var(--text-muted); font-size:1rem; max-width:600px; margin:0 auto 2rem; line-height:1.6;">
+            Assemble your crew of engineers and strategists. Secure your terminal before the registration protocol terminates.
+          </p>
+          <a href="#" class="btn btn-primary btn-lg" data-form-cta aria-label="Open Participation Form">Open Participation Form</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Core Members Section -->
+    <section id="core-members" aria-label="Core Organizing Crew">
+      <div class="team-bg-curve" aria-hidden="true">
+        <svg width="460" height="154" viewBox="0 0 460 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-87.463 458.432C-102.118 348.092 -77.3418 238.841 -15.0744 188.274C57.4129 129.408 180.708 150.071 351.748 341.128C278.246 -374.233 633.954 380.602 548.123 42.7707"
+                stroke="currentColor" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="container team-inner">
+        <div class="team-head">
+          <div class="team-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/>
+              <path d="M8 15H7a4 4 0 0 0-4 4v2"/>
+              <circle cx="10" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h2 class="team-title">
+            Core Organizing Crew
+            <svg class="team-title-squiggle" aria-hidden="true" width="108" height="86" viewBox="0 0 108 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M38.8484 16.236L15 43.5793L78.2688 15L18.1218 71L93 34.1172L70.2047 65.2739"
+                    stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </h2>
+          <p class="team-sub">
+            The student leadership and operational command steering the 24-hour sprint at ITM Skills University Kharghar.
+          </p>
+        </div>
+
+        <div class="marquee" data-marquee>
+          <div class="marquee-track">
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/KALPANA MA'AM.jpeg" alt="Vice President" loading="lazy" />
+                <div class="team-label">
+                  <h3>Kalpana Kumaran </h3>
+                  <p>Dean Of ITM Skills University Kharghar</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/Aarti ma'am.jpeg" alt="H.O.D" loading="lazy" />
+                <div class="team-label">
+                  <h3>Aarti Sharma </h3>
+                  <p>H.O.D</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/PRASAD SIR .jpeg" alt="Faculty In-charge" loading="lazy" />
+                <div class="team-label">
+                  <h3>Prasad Sir </h3>
+                  <p>Faculty In-charge</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/KAASH MA'AM.jpeg" alt="Faculty In-charge" loading="lazy" />
+                <div class="team-label">
+                  <h3>KAASH MA'AM</h3>
+                  <p>Faculty In-charge</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/TANISH.jpeg" alt="Team Lead" loading="lazy" />
+                <div class="team-label">
+                  <h3>Tanish</h3>
+                  <p>Team Lead</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/japgi.jpeg" alt="Co-Lead" loading="lazy" />
+                <div class="team-label">
+                  <h3>Japji Kaur</h3>
+                  <p>Co-Lead</p>
+                </div>
+              </div>
+            </article>
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/HARSH KUMAR.jpeg" alt="Content Head" loading="lazy" />
+                <div class="team-label">
+                  <h3>Harsh Kumar</h3>
+                  <p>Content Head</p>
+                </div>
+              </div>
+            </article>
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/Sai.jpeg" alt="Tech Head" loading="lazy" />
+                <div class="team-label">
+                  <h3>Sai Pansare </h3>
+                  <p>Tech Head</p>
+                </div>
+              </div>
+            </article>
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/vyom.jpeg" alt="Team Co-ordinator" loading="lazy" />
+                <div class="team-label">
+                  <h3>Vyom Shah </h3>
+                  <p>Team Co-ordinator </p>
+                </div>
+              </div>
+            </article>
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="/IMAGES/ayush.jpeg" alt="Creative Head" loading="lazy" />
+                <div class="team-label">
+                  <h3>Ayush Kumar </h3>
+                  <p>Creative Head</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Logo Strip (left / centre / right) — below Core Members, above Footer -->
+    <section class="logo-strip" id="logo-strip" aria-label="Organizing institutions">
+      <div class="container">
+        <div class="logo-strip-row">
+          <figure class="logo-item logo-left">
+            <img src="/IMAGES/banner3.jpeg" alt="ITM Skills University logo" loading="lazy" />
+          </figure>
+          <figure class="logo-item logo-center">
+            <img src="/IMAGES/banner2.jpeg" alt="School of FutureTech logo" loading="lazy" />
+          </figure>
+          <figure class="logo-item logo-right">
+            <img src="/IMAGES/banner1.jpeg" alt="School of FutureTech Hackathon Club logo" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 13. Contact Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="flex items-center gap-2" style="margin-bottom:1rem;">
+            <div class="brand-badge" style="width:28px; height:28px; font-size:1rem;">M</div>
+            <strong style="font-family:var(--font-display); font-size:1.2rem; color:#fff; text-transform:uppercase;">
+              MINDSPRINT 2026 // THE DOOMSDAY HACKATHON
+            </strong>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; max-width:400px; line-height:1.6;">
+            Organized by School of FutureTech Hackathon Club, School of FutureTech, ITM Skills University Kharghar.
+          </p>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--acid-green); letter-spacing:0.1em;">
+            IDEAS BEYOND SURVIVAL
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>// DIRECTIVES</h4>
+          <ul>
+            <li><a href="#about">The Mission</a></li>
+            <li><a href="#tracks">Survival Protocols</a></li>
+            <li><a href="#schedule">Countdown Timeline</a></li>
+            <li><a href="#faq">Survival Briefing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>// COMMUNICATIONS</h4>
+          <ul>
+            <li><a href="mailto:futuretech@itm.edu"><span style="color:var(--acid-green); font-family:var(--font-mono); font-size:0.75rem;">EMAIL:</span> futuretech@itm.edu</a></li>
+            <li><a href="https://maps.google.com/?q=ITM+Skills+University+Kharghar+Navi+Mumbai" target="_blank" rel="noopener">Campus Tactical Map</a></li>
+            <li><a href="#conduct">Code of Conduct</a></li>
+            <li><a href="#privacy">Privacy Protocol</a></li>
+          </ul>
+        </div>
+
+        <!-- Social handles -->
+        <div class="footer-col footer-social">
+          <h4>// SOCIAL CHANNELS</h4>
+          <ul class="social-list">
+            <li>
+              <a href="https://www.instagram.com/hackathon_club_itm/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @Hackathon_Club_ITM">
+                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+                <span>@Hackathon_Club_ITM</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/school-of-futuretech-b-tech-cse" target="_blank" rel="noopener noreferrer" aria-label="School of FutureTech LinkedIn">
+                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect width="4" height="12" x="2" y="9"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+                <span>School of FutureTech</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/itm_school_of_future_tech?xtok=MTRwbHR1MG1zZDd0eQ==/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @itm_school_of_future_tech">
+                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+                <span>@School of FutureTech</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@schooloffuturetech" target="_blank" rel="noopener noreferrer" aria-label="YouTube: ITM School of FutureTech">
+                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+                  <path d="m10 15 5-3-5-3z"/>
+                </svg>
+                <span>@School of FutureTech</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ITM Skills University. All survival protocols operational.</div>
+        <div style="color:var(--text-subtle);">STANDALONE STATIC EDITION</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
