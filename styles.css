@@ -56,7 +56,11 @@ body {
   background-color: var(--bg-dark);
   /* Updated background to use the uploaded image with a dark overlay */
   background-image: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
+<<<<<<< HEAD:sample.html/styles.css
                     url('/IMAGES/backdrop1.jpeg');
+=======
+                    url('./IMAGES/2134.jpeg');
+>>>>>>> 41072573690189cbb8f2101c3d73c239424ce8e3:styles.css
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
