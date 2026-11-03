@@ -7,7 +7,7 @@ const CONFIG = {
   // ISO-8601 target with explicit timezone (+05:30 for IST)
   countdownTarget: "2026-11-21T12:00:00+05:30",
   // External registration form URL (Leave empty or invalid for "Form Coming Soon" state)
-  externalFormUrl: "",
+  externalFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdN_MeGNvwIP1YalFU40NintyNulda4U_0-SYss5fFIz49gew/viewform",
 };
 
 // --- 1. Centralized External Form URL Handler ---
@@ -147,30 +147,54 @@ function setupFAQ() {
   });
 }
 
-// --- 5. Mobile Menu Toggle ---
+// --- 5. Hamburger Menu (all screen sizes) ---
 function setupMobileMenu() {
   const toggleBtn = document.getElementById('mobileMenuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
+  if (!toggleBtn || !mobileMenu || toggleBtn.dataset.ready) return;
+  toggleBtn.dataset.ready = 'true';
 
-  if (!toggleBtn || !mobileMenu) return;
+  const ICON_MENU =
+    '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">' +
+    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+  const ICON_CLOSE =
+    '<svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">' +
+    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/></svg>';
 
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.contains('open');
-    if (isOpen) {
-      mobileMenu.classList.remove('open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-    } else {
-      mobileMenu.classList.add('open');
-      toggleBtn.setAttribute('aria-expanded', 'true');
-    }
+  // Rebuild the menu from the nav links so it always lists every section
+  const cta = mobileMenu.querySelector('[data-form-cta]');
+  mobileMenu.querySelectorAll('a:not([data-form-cta])').forEach((a) => a.remove());
+  document.querySelectorAll('.nav-links a').forEach((link) => {
+    const a = document.createElement('a');
+    a.href = link.getAttribute('href');
+    a.textContent = link.textContent;
+    mobileMenu.insertBefore(a, cta);
   });
 
-  const links = mobileMenu.querySelectorAll('a');
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-    });
+  function setOpen(open) {
+    mobileMenu.classList.toggle('open', open);
+    toggleBtn.setAttribute('aria-expanded', String(open));
+    toggleBtn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    toggleBtn.innerHTML = open ? ICON_CLOSE : ICON_MENU;
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    setOpen(!mobileMenu.classList.contains('open'));
+  });
+
+  // Close when a menu link is clicked
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // Close when clicking outside the menu
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) setOpen(false);
+  });
+
+  // Close with the Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
   });
 }
 
@@ -187,14 +211,53 @@ function setupTeamMarquee() {
   });
 }
 
+// --- 7. Overall Timeline Dropdown (ONE dropdown for the whole timeline) ---
+function setupTimelineSection() {
+  const timeline = document.querySelector('#schedule .timeline');
+  // Skip if the timeline is missing or already wrapped (prevents duplicates)
+  if (!timeline || timeline.closest('.timeline-section')) return;
 
-// Initialize on DOM Ready
+  const wrap = document.createElement('div');
+  wrap.className = 'timeline-section';
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'timeline-section-toggle';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'timelineSectionBody');
+  toggle.innerHTML =
+    '<span class="timeline-section-label">Timeline</span>' +
+    '<span class="timeline-section-chevron" aria-hidden="true">' +
+    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>' +
+    '</span>';
+
+  const body = document.createElement('div');
+  body.className = 'timeline-section-body';
+  body.id = 'timelineSectionBody';
+
+  const inner = document.createElement('div');
+  inner.className = 'timeline-section-inner';
+
+  // Put the existing timeline inside the collapsible body
+  timeline.parentNode.insertBefore(wrap, timeline);
+  inner.appendChild(timeline);
+  body.appendChild(inner);
+  wrap.append(toggle, body);
+
+  toggle.addEventListener('click', () => {
+    const isOpen = wrap.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
+
+// Initialize on DOM Ready (only ONE init block in the whole file)
 document.addEventListener('DOMContentLoaded', () => {
   setupExternalLinks();
   setupCountdown();
   setupScrollEffects();
   setupFAQ();
   setupMobileMenu();
-  setupTeamMarquee();   // <-- add this
-
+  setupTeamMarquee();
+  setupTimelineSection();
 });

@@ -1283,7 +1283,7 @@ footer {
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  opacity: 0.85;
+  opacity: 0.45;
   transition: opacity 0.2s ease;
 }
 
@@ -1356,4 +1356,332 @@ footer {
 }
 img {
       width: 95%;
+}
+
+/* ---------- Doomsday info section ---------- */
+.doomsday-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+.doomsday-stat {
+  text-align: center;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: 2px;
+  padding: 1.25rem 1rem;
+}
+
+.doomsday-stat-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--ember-orange);
+}
+
+.doomsday-stat-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.doomsday-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border-radius: 12px;
+  background: var(--acid-green-dim);
+  border: 1px solid var(--acid-green-border);
+  color: var(--acid-green);
+}
+
+.doomsday-card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.doomsday-card-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.doomsday-note {
+  max-width: 650px;
+  margin: 2.5rem auto 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .doomsday-stats { grid-template-columns: 1fr; }
+}
+
+/* ---------- Timeline dropdown ---------- */
+.timeline-card {
+  padding: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-card.open {
+  border-color: var(--acid-green-border);
+}
+
+.timeline-card.critical.open,
+.timeline-card.critical:hover {
+  border-color: var(--ember-orange);
+}
+
+.timeline-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.timeline-toggle-text {
+  display: block;
+  min-width: 0;
+}
+
+.timeline-toggle .phase-tag {
+  margin-bottom: 0.25rem;
+}
+
+.timeline-toggle .step-title {
+  margin-bottom: 0;
+}
+
+.timeline-chevron {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--surface-border);
+  border-radius: 2px;
+  color: var(--text-muted);
+  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-card.open .timeline-chevron {
+  transform: rotate(180deg);
+  color: var(--acid-green);
+  border-color: var(--acid-green-border);
+}
+
+.timeline-card.critical.open .timeline-chevron {
+  color: var(--ember-orange);
+  border-color: var(--ember-orange-border);
+}
+
+/* Smooth open/close without fixed heights */
+.timeline-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.35s ease, visibility 0.35s;
+}
+
+.timeline-card.open .timeline-body {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.timeline-body-inner {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 1.5rem;
+}
+
+.timeline-body-inner > p {
+  padding-bottom: 1.25rem;
+}
+
+/* ---------- Logo opacity ---------- */
+:root {
+  --logo-opacity: 0.55;   /* 1 = solid, 0 = invisible. Change this one number. */
+}
+
+.logo-item img {
+  opacity: var(--logo-opacity);
+  transition: opacity 0.2s ease;
+}
+
+.logo-item img:hover {
+  opacity: 1;
+}
+
+/* ---------- Overall timeline dropdown ---------- */
+.timeline-section {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.timeline-section-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-section-toggle:hover {
+  border-color: var(--acid-green-border);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.12);
+}
+
+.timeline-section.open .timeline-section-toggle {
+  border-color: var(--acid-green-border);
+}
+
+.timeline-section-label {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.timeline-section-chevron {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--surface-border);
+  border-radius: 2px;
+  color: var(--text-muted);
+  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-section.open .timeline-section-chevron {
+  transform: rotate(180deg);
+  color: var(--acid-green);
+  border-color: var(--acid-green-border);
+}
+
+/* Smooth open/close without fixed heights */
+.timeline-section-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.45s ease, visibility 0.45s;
+}
+
+.timeline-section.open .timeline-section-body {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.timeline-section-inner {
+  overflow: hidden;
+  min-height: 0;
+  /* side padding stops the glowing timeline markers from being clipped */
+  padding: 0 1rem;
+}
+
+.timeline-section.open .timeline-section-inner {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+/* Restore normal padding now that cards no longer have their own dropdown */
+.timeline-card {
+  padding: 1.5rem;
+}
+/* ---------- Hamburger menu on all screen sizes ---------- */
+.nav-links {
+  display: none;               /* links now live inside the hamburger */
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle[aria-expanded="true"] {
+  border-color: var(--acid-green-border);
+  color: var(--acid-green);
+}
+
+/* Dropdown panel anchored under the hamburger, on the right */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 1.5rem;
+  width: min(320px, calc(100% - 3rem));
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  gap: 0.25rem;
+  background: rgba(14, 14, 14, 0.97);
+  border: 1px solid var(--surface-border);
+  border-radius: 2px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.mobile-menu a:not(.btn) {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-menu a:not(.btn):hover {
+  background: var(--acid-green-dim);
+  color: var(--acid-green);
+}
+
+.mobile-menu .btn {
+  margin-top: 0.5rem;
+}
+/* Put the hamburger to the LEFT of the Join Mission button */
+.mobile-menu-toggle {
+  order: -1;
 }
